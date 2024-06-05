@@ -1,0 +1,156 @@
+@import "../../App.scss";
+
+.container {
+  display: flex;
+  margin: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1250px;
+  padding-inline: 20px;
+  align-items: center;
+  .left {
+    flex: 1;
+    .heading {
+      h1 {
+        color: $stext;
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      div {
+        display: flex;
+        align-items: baseline;
+        span{
+          font-weight: 700;
+          font-size: 26px;
+          color: $purple;
+          margin-right: 10px;
+        }
+        p{
+          font-size: 20px;
+          color: $stext;
+        }
+      }
+    }
+    .leftBottom {
+      border-radius: 10px;
+      margin-block: 40px;
+      padding: 20px;
+      background-color: $lbg;
+      .coin {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+        .coinLeft {
+          color: $stext;
+          display: flex;
+          gap: 5px;
+          align-items: center;
+          flex: 1;
+          p{
+            color: $purple;
+            font-size: .7rem;
+          }
+        }
+        .coinMid {
+          color: $stext;
+          flex: 1;
+        }
+        .coinRight {
+          text-align: right;
+          color: #f6465d;
+          flex: 1;
+        }
+      }
+      /* Apply padding bottom to all .coin elements except the last one */
+      // li:not(:last-child) {
+      //   padding-bottom: 20px; /* Apply padding bottom to all li elements except the last one */
+      // }
+      .moreCoin{
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 12px;
+        color:$stext;
+        transition: all .1s ease-in;
+        &:hover{
+          color: $text;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    // background-color: $stext;
+    .video {
+      width: 100%;
+      border: none;
+      display: flex;
+      justify-content: end;
+      video {
+        border-radius: 40px;
+        width: 280px;
+        aspect-ratio: auto 280 / 580;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+        overflow-clip-margin: content-box;
+        overflow: clip;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 765px) {
+  /* Styles here */
+  .container {
+    margin: 40px 10px;
+    flex-direction: column;
+    padding: 0px;
+
+    .left {
+      .heading {
+        h1 {
+          font-weight: 800;
+          text-align: center;
+          font-size: 32px;
+          margin-bottom: 30px;
+        }
+        div {
+          justify-content: center;
+          span {
+            font-size: 20px;
+          }
+          p {
+            text-align: center;
+            font-size: 16px;
+          }
+        }
+      }
+      .leftBottom {
+        padding: 15px;
+        .coin {
+          .coinLeft {
+            p {
+              font-size: 0.5rem;
+            }
+          }
+          .coinRight {
+            font-size: 0.7rem;
+          }
+        }
+        .moreCoin {
+          font-size: 10px;
+        }
+      }
+    }
+    .right {
+      .video {
+        video {
+          width: 240px;
+        }
+      }
+    }
+  }
+}

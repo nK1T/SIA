@@ -1,0 +1,122 @@
+@import "../../App.scss";
+
+.container {
+  margin: 50px 0px 150px 0px;
+  .wrapper {
+    display: flex;
+    gap: 60px;
+    .left {
+      flex: 1;
+    }
+    .midRight {
+      padding-right: 30px;
+      flex: 3;
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid $desatBlue;
+      h2 {
+        color: $text;
+      }
+      .tableData {
+        margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+          padding-block: 8px;
+        }
+
+        th {
+          p {
+            cursor: pointer;
+            gap: 5px;
+            display: flex;
+            align-items: center;
+          }
+          font-weight: 200;
+          font-size: 0.7rem;
+          color: $purple;
+          width: 300px;
+        }
+
+        tr {
+          font-size: 0.8rem;
+          font-weight: 300;
+          color: $text;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    margin: 20px 10px 50px 10px;
+    .wrapper {
+      gap: 40px;
+      flex-direction: column;
+      .midRight {
+        padding: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .container {
+    .wrapper {
+      .midRight {
+        width: 100%;
+        h2 {
+          text-align: center;
+        }
+        .tableData {
+          overflow-x: auto;
+          max-width: 100%;
+          margin-top: 20px;
+          width: 100%;
+          border-collapse: collapse;
+          scrollbar-width: thin;
+          scrollbar-color: $purple transparent;
+          th,
+          td {
+            padding: 10px;
+            white-space: nowrap; // Prevent text from wrapping
+            overflow: hidden; // Hide overflowed content
+            text-overflow: ellipsis; // Show ellipsis (...) for overflowed content
+          }
+
+          th {
+            p {
+              cursor: pointer;
+              gap: 5px;
+              display: flex;
+              align-items: center;
+            }
+            font-weight: 200;
+            font-size: 0.7rem;
+            color: $purple;
+            width: auto; // Let the column width adjust based on content
+          }
+
+          tr {
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: $text;
+          }
+        }
+      }
+    }
+  }
+}
+.noData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $greyBlue;
+  i{
+    font-size: 50px;
+  }
+}

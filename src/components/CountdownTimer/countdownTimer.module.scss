@@ -1,0 +1,168 @@
+@import "../../App.scss";
+
+@mixin notches {
+  content: "";
+  background-color: $vvDarkBlue;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  position: absolute;
+}
+
+@keyframes flip-top {
+  to {
+    transform: rotateX(90deg);
+  }
+}
+@keyframes flip-bottom {
+  to {
+    transform: rotateX(0deg);
+  }
+}
+.cont{
+  margin-bottom: 50px;
+  background-color: $lbg;
+  padding: 30px;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1 {
+      color: $stext;
+      font-size: 1.5rem;
+    }
+    .cards {
+      display: flex;
+      gap: 15px;
+  
+      // individual card
+      .card {
+        text-align: center;
+        font-size: 25px;
+  
+        p {
+          color: $greyBlue;
+          font-size: 11px;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+        }
+  
+        // wraps halves
+        .flip-card {
+          display: flex;
+          flex-direction: column;
+          box-shadow: $box-shadow;
+          position: relative;
+          margin: 15px auto;
+        }
+  
+        // all card halves
+        .top-half,
+        .bottom-half,
+        .top-flip,
+        .bottom-flip {
+          color: $lpurple;
+          font-size: 35px;
+          height: 43px;
+          width: 77px;
+          padding: 23px 7px;
+          overflow: hidden;
+          text-align: center;
+          will-change: transform !important;
+          box-shadow: $half-shadow;
+        }
+  
+        .top-half,
+        .top-flip {
+          color: $purple;
+          border-radius: 5px 5px 0 0;
+          background-color: $top-card;
+  
+          &::before {
+            @include notches();
+            bottom: -5px;
+            left: -5px;
+          }
+  
+          &::after {
+            @include notches();
+            bottom: -5px;
+            right: -5px;
+          }
+        }
+  
+        .bottom-half,
+        .bottom-flip {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          border-radius: 0 0 5px 5px;
+          background-color: $desatBlue;
+          box-shadow: 0 -2px 5px 0 rgba(71, 83, 115, 0.7) inset;
+  
+          &::before {
+            @include notches();
+            top: -5px;
+            left: -5px;
+          }
+  
+          &::after {
+            @include notches();
+            top: -5px;
+            right: -5px;
+          }
+        }
+  
+        // flipping animations
+        .top-flip {
+          position: absolute;
+          transform-origin: bottom;
+          transform: rotateX(0deg);
+          animation: flip-top 0.5s ease-in forwards;
+        }
+  
+        .bottom-flip {
+          position: absolute;
+          bottom: 0;
+          transform-origin: top;
+          transform: rotateX(90deg);
+          animation: flip-bottom 0.5s ease-out 0.5s;
+        }
+      }
+    }
+    .btn{
+      display: flex;
+      justify-content: center;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        border: none;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 4px;
+        border: 1px solid $purple;
+        background-color: transparent;
+        color: $purple;
+        padding: 10px 15px;
+        margin-top: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          box-shadow 0.3s ease;
+          font-weight: 700;
+  letter-spacing: 2px;
+        &:hover {
+          background-color: $ltext;
+          color: $purple;
+          box-shadow: 0 0 10px 3px rgba(255, 251, 251, 0.241);
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:500px){
+  .cont{
+    padding: 25px 10px;
+  }
+ }

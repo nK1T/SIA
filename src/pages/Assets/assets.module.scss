@@ -1,0 +1,329 @@
+@import "../../App.scss";
+
+.container {
+  margin: 50px 0px 150px 0px;
+  .wrapper {
+    display: flex;
+    gap: 60px;
+    .left {
+      flex: 1;
+    }
+    .right {
+      padding-right: 30px;
+      flex: 3;
+      .topRight {
+        border-radius: 20px;
+        padding: 20px;
+        border: 1px solid $desatBlue;
+        color: $text;
+        display: flex;
+        justify-content: space-between;
+        .topRightLeft {
+          > h2 {
+            font-size: 1.2rem;
+          }
+          > p:nth-child(2) {
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 2rem;
+          }
+          > p:nth-child(3) {
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+          }
+          > span {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            p:nth-child(1) {
+              display: flex;
+              align-items: center;
+              gap: 3px;
+              font-size: 0.9rem;
+            }
+            p:nth-child(2) {
+              font-size: 0.9rem;
+              color: rgb(14, 203, 129);
+            }
+          }
+        }
+        .topRightRight {
+          display: flex;
+          flex-direction: column;
+          .btns {
+            display: flex;
+            gap: 20px;
+            .btn {
+              width: 100%;
+              button {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                width: 100%;
+                cursor: pointer;
+                font-weight: 600;
+                border: none;
+                color: $stext;
+                background-color: $purple;
+                padding: 7px;
+                border-radius: 5px;
+                &:hover {
+                  background-color: rgba(
+                    $purple,
+                    0.7
+                  ); // Change the alpha value as needed
+                }
+              }
+            }
+          }
+          .chart {
+            color: $bg;
+          }
+        }
+      }
+      .midRight {
+        margin-top: 30px;
+        border-radius: 20px;
+        padding: 20px;
+        border: 1px solid $desatBlue;
+        h2 {
+          color: $text;
+        }
+        .tableData {
+          margin-top: 20px;
+          width: 100%;
+          border-collapse: collapse;
+
+          th,
+          td {
+            padding-block: 8px;
+          }
+
+          th {
+            p {
+              cursor: pointer;
+              gap: 5px;
+              display: flex;
+              align-items: center;
+            }
+            font-weight: 200;
+            font-size: 0.7rem;
+            color: $purple;
+            width: 300px;
+          }
+
+          tr {
+            font-weight: 300;
+            color: $text;
+          }
+        }
+      }
+      .bottomRight {
+        margin-top: 30px;
+        border-radius: 20px;
+        padding: 20px;
+        border: 1px solid $desatBlue;
+        min-height: 250px;
+          h2 {
+            color: $text;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .bottomRightContent {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          i {
+            color: rgba($stext, 0.2);
+            font-size: 4rem;
+          }
+          p {
+            color: rgba($stext, 0.5);
+          }
+          .tableData {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+
+            th,
+            td {
+              text-align: left;
+              padding-block: 8px;
+            }
+
+            th {
+              p {
+                cursor: pointer;
+                gap: 5px;
+                display: flex;
+                align-items: center;
+              }
+              font-weight: 200;
+              font-size: 0.7rem;
+              color: $purple;
+              width: 300px;
+            }
+
+            tr {
+              font-size: 0.8rem;
+              font-weight: 300;
+              color: $text;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Styles for popup
+.modal {
+  margin-inline: 10px;
+  background-color: $desatBlue;
+  max-width: 700px;
+  border-radius: 5px;
+  .header {
+    width: 100%;
+    border-bottom: 1px solid $text;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgb(14, 203, 129);
+    padding: 5px;
+  }
+  .content {
+    width: 100%;
+    color: $stext;
+    font-size: 1rem;
+    padding: 10px 5px;
+  }
+  .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: 5px;
+    top: -10px;
+    font-size: 24px;
+    background: $purple;
+    color: $stext;
+    border-radius: 18px;
+    border: none;
+  }
+}
+.noData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $greyBlue;
+  i{
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .container {
+    margin: 20px 10px 50px 10px;
+    .wrapper {
+      gap: 40px;
+      flex-direction: column;
+      .right {
+        padding: 0px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 580px) {
+  .container {
+    .wrapper {
+      .right {
+        width: 100%;
+        .topRight {
+          gap: 30px;
+          flex-direction: column;
+        }
+        .midRight {
+            padding: 10px;
+          .tableData {
+            th:nth-child(2) {
+              > p {
+                justify-content: center;
+              }
+            }
+            th:nth-child(3) {
+              > p {
+                justify-content: center;
+              }
+            }
+            th:nth-child(4) {
+              > p {
+                justify-content: end;
+              }
+            }
+            td:nth-child(2) {
+              text-align: center;
+              // text-align: right;
+            }
+            :nth-child(3) {
+              text-align: center;
+              // display: none;
+            }
+            :nth-child(4) {
+              text-align: right;
+              // display: none;
+            }
+          }
+        }
+        .bottomRight {
+            padding: 10px;
+            h2{
+            text-align: center;
+        }
+            .bottomRightContent {
+            .tableData {
+              overflow-x: auto;
+              max-width: 100%;
+              margin-top: 20px;
+              width: 100%;
+              border-collapse: collapse;
+              scrollbar-width: thin;
+              scrollbar-color: $purple transparent;
+
+              th,
+              td {
+                text-align: center;
+                padding: 10px;
+                white-space: nowrap; // Prevent text from wrapping
+                overflow: hidden; // Hide overflowed content
+                text-overflow: ellipsis; // Show ellipsis (...) for overflowed content
+              }
+
+              th {
+                p {
+                  cursor: pointer;
+                  gap: 5px;
+                  display: flex;
+                  align-items: center;
+                }
+                font-weight: 200;
+                font-size: 0.7rem;
+                color: $purple;
+                width: auto; // Let the column width adjust based on content
+              }
+
+              tr {
+                font-size: 0.8rem;
+                font-weight: 300;
+                color: $text;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

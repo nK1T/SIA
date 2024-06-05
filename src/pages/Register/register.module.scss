@@ -1,0 +1,101 @@
+@import "../../App.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 20px;
+  .wrapper {
+    border: 1px solid $greyBlue;
+    border-radius: 24px;
+    // min-height: 500px;
+    padding: 20px;
+    .top {
+      text-align: center;
+      h2 {
+        display: flex;
+        align-items: center;
+        color: $purple;
+        img {
+          margin-top: 4px;
+          height: 25px;
+        }
+        margin-bottom: 40px;
+      }
+      p {
+        color: $purple;
+        font-weight: 600;
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+    }
+    .form{
+      display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+  gap: 20px;
+  .formField {
+    margin-bottom: 10px;
+    .inputLabel {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-weight: 700;
+      font-size: .9rem;
+      margin-bottom: 5px;
+      color: $stext;
+    }
+    .inputField {
+      font-weight: 700;
+      border-style: solid;
+      border-color: rgb(192, 192, 192);
+      border-radius: 10px;
+      width: 100%;
+      padding: 12px;
+      outline: none;
+    }
+  }
+    }
+    p {
+      font-size: 0.8rem;
+      font-weight: 400;
+      line-height: 22px;
+      color: $stext;
+    }
+    .error{
+        margin-top: 5px;
+        font-size: .7rem;
+    }
+    .btn {
+        cursor: pointer;
+        color: $stext;
+        background-color: $purple;
+        border: none;
+        margin-top: 20px;
+        border-radius: 10px;
+        height: 48px;
+        width: 100%;
+        font-weight: 700;
+        font-size: 16px;
+        transition: all 0.1s ease-in;
+        &:hover {
+          background-color: $purple;
+          box-shadow: 0 0 10px 3px rgba(255, 251, 251, 0.241);
+        }
+      }
+      .login {
+        margin-top: 5px;
+        margin-left: 3px;
+      }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+  .container{
+    .wrapper{
+      width: 100%;
+      margin: 10px;
+      border: none;
+      padding: 0px;
+    }
+  }
+}

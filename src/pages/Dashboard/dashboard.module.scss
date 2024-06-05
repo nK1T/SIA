@@ -1,0 +1,200 @@
+@import "../../App.scss";
+
+.container {
+  margin: 50px 0px 150px 0px;
+  .wrapper {
+    display: flex;
+    gap: 60px;
+    .left {
+      flex: 1;
+    }
+    .right {
+      padding-right: 30px;
+      flex: 3;
+      .topRight {
+        border-radius: 20px;
+        padding: 20px;
+        border: 1px solid $desatBlue;
+        color: $text;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .topRightLeft {
+          .avatar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            img {
+              border-radius: 50%;
+            }
+            p {
+              font-size: 1.3rem;
+              font-weight: 700;
+            }
+            .email {
+              display: flex;
+              flex-direction: column;
+              div {
+                margin-block: 5px;
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                padding: 3px;
+                color: #0ecb81;
+                background-color: #102821;
+                font-size: 0.8rem;
+                width: fit-content;
+                border-radius: 50px;
+              }
+            }
+          }
+        }
+        .topRightRight {
+          display: flex;
+          flex-direction: column;
+          h3 {
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+          p {
+            font-weight: 900;
+            color: $purple;
+            font-size: 2rem;
+          }
+        }
+      }
+      .midRight {
+        margin-top: 30px;
+        border-radius: 20px;
+        padding: 20px;
+        border: 1px solid $desatBlue;
+        h2 {
+          color: $text;
+        }
+          .tableData {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+
+            th,
+            td {
+              padding-block: 8px;
+            }
+
+            th {
+              p {
+                cursor: pointer;
+                gap: 5px;
+                display: flex;
+                align-items: center;
+              }
+              font-weight: 200;
+              font-size: 0.7rem;
+              color: $purple;
+              width: 300px;
+            }
+
+            tr {
+              font-size: 0.8rem;
+              font-weight: 300;
+              color: $text;
+            }
+          }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    margin: 20px 10px 50px 10px;
+    .wrapper {
+      gap: 40px;
+      flex-direction: column;
+      .right {
+        padding: 0px;
+        .topRight {
+          padding: 10px 5px;
+          .topRightLeft {
+            padding: 10px 5px;
+            .avatar {
+              align-items: start;
+              flex-direction: column;
+            }
+          }
+        }
+        .midRight{
+          padding: 20px 10px
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .container {
+    .wrapper {
+      .right {
+        width: 100%;
+        .topRight {
+          gap: 30px;
+          flex-direction: column;
+          .topRightLeft {
+            .avatar {
+              align-items: center;
+              .email {
+                align-items: center;
+                p {
+                  font-size: 1.24rem;
+                }
+              }
+            }
+          }
+        }
+        .midRight {
+          h2{
+            text-align: center;
+          }
+          .tableData {
+            overflow-x: auto;
+            max-width: 100%;
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+            scrollbar-width: thin;
+            scrollbar-color: $purple transparent;
+          
+            th,
+            td {
+              padding: 10px;
+              white-space: nowrap; // Prevent text from wrapping
+              overflow: hidden; // Hide overflowed content
+              text-overflow: ellipsis; // Show ellipsis (...) for overflowed content
+            }
+          
+            th {
+              p {
+                cursor: pointer;
+                gap: 5px;
+                display: flex;
+                align-items: center;
+              }
+              font-weight: 200;
+              font-size: 0.7rem;
+              color: $purple;
+              width: auto; // Let the column width adjust based on content
+            }
+          
+            tr {
+              font-size: 0.8rem;
+              font-weight: 300;
+              color: $text;
+            }
+          }
+        }
+      }
+    }
+  }
+}

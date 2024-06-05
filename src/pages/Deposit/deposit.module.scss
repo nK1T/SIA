@@ -1,0 +1,211 @@
+@import "../../App.scss";
+
+.container {
+  max-width: 936px;
+  margin-block: 30px 60px;
+  margin-left: auto;
+  margin-right: auto;
+  .wrapper {
+    display: flex;
+    gap: 120px;
+    .left {
+      // background-color: $desatBlue;
+      flex: 1;
+      .form {
+        .field {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 30px;
+          gap: 15px;
+          .dollar {
+            display: flex;
+            .typeField {
+              border-top-right-radius: 0px;
+              border-bottom-right-radius: 0px;
+              border-right: none;
+            }
+            button {
+              font-size: 1.1rem;
+              border-top-right-radius: 4px;
+              border-bottom-right-radius: 4px;
+              border: none;
+              background-color: $purple;
+              color: $stext;
+              padding: 10px;
+            }
+          }
+          p {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 20px;
+            font-weight: 600;
+            color: $stext;
+          }
+          .customSelect {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding: 10px 20px;
+            border: 1px solid $desatBlue;
+            border-radius: 5px;
+            background-color: transparent;
+            font-size: 16px;
+            color: $stext;
+            width: 100%;
+            cursor: pointer;
+          }
+          .typeField {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding: 10px 20px;
+            border: 1px solid $desatBlue;
+            border-radius: 5px;
+            background-color: transparent;
+            font-size: 16px;
+            color: $stext;
+            width: 100%;
+          }
+
+          .customSelect,
+          .typeField {
+            &:hover {
+              border-color: $purple;
+            }
+          }
+
+          .customSelect,
+          .typeField {
+            &:focus {
+              outline: none;
+              border-color: $purple;
+            }
+          }
+          .customSelect {
+            option {
+              background-color: $bg;
+              color: $purple;
+            }
+          }
+          .address {
+            display: flex;
+            padding: 10px;
+            gap: 10px;
+            border-radius: 5px;
+            border: 1px solid $desatBlue;
+            .qr {
+              img {
+                background-color: $text;
+                padding: 3px;
+                border-radius: 4px;
+              }
+            }
+            .qrtext {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              gap: 5px;
+              :nth-child(1) {
+                font-weight: 200;
+                font-size: 0.7rem;
+              }
+              :nth-child(2) {
+                display: flex;
+                gap: 5px;
+                color: $text;
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+        .btn {
+          cursor: pointer;
+          color: $stext;
+          background-color: $purple;
+          border: none;
+          border-radius: 5px;
+          padding: 10px;
+          font-weight: 700;
+          font-size: 16px;
+          transition: all 0.1s ease-in;
+          &:hover {
+            background-color: $purple;
+            box-shadow: 0 0 10px 3px rgba(255, 251, 251, 0.241);
+          }
+        }
+      }
+    }
+    .right {
+      flex: 1;
+      h3 {
+        color: $stext;
+      }
+      .video {
+        display: flex;
+        padding-top: 24px;
+        gap: 20px;
+        img {
+          padding: 10px;
+          background: $lbg;
+          border-radius: 8px;
+          cursor: pointer;
+          height: auto;
+          position: relative;
+          width: 120px;
+          height: 100px;
+        }
+        .videoTitle {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          justify-content: center;
+          :nth-child(1) {
+            font-weight: 700;
+            color: $stext;
+          }
+          :nth-child(2) {
+            color: $desatBlue;
+          }
+        }
+      }
+      .qstns {
+        color: $stext;
+        margin-top: 30px;
+        p {
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    margin-inline: 10px;
+    .wrapper {
+      gap: 100px;
+      flex-direction: column;
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  .container {
+    .wrapper {
+      .left {
+        .form {
+          .field {
+            .address {
+              .qrtext {
+                :nth-child(2) {
+                  font-size: 0.68rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
