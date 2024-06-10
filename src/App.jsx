@@ -12,6 +12,7 @@ import Deposit from "./pages/Deposit/Deposit";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { PopupProvider } from "./components/PopupProvider";
 import Invites from "./pages/Invites/Invites";
+import Cryptos from "./pages/Cryptos/Cryptos";
 
 const Layout1 = ({ children }) => {
   return (
@@ -43,58 +44,68 @@ function App() {
     <Router>
       <Routes>
         <Route
-          path="/home"
+          path="/"
           element={
-            <PrivateRoute isAuthenticated={isAuthenticated}>
+            // <PrivateRoute isAuthenticated={isAuthenticated}>
               <Layout1>
                 <Home />
               </Layout1>
-            </PrivateRoute>
+            // </PrivateRoute>
+          }
+        />
+        <Route
+          path="/cryptos"
+          element={
+            // <PrivateRoute isAuthenticated={isAuthenticated}>
+              <Layout1>
+                <Cryptos />
+              </Layout1>
+            // </PrivateRoute>
           }
         />
         <Route
           path="/myassets"
           element={
-            <PrivateRoute isAuthenticated={isAuthenticated}>
+            // <PrivateRoute isAuthenticated={isAuthenticated}>
               <Layout2>
                 <Assets />
               </Layout2>
-            </PrivateRoute>
+            // </PrivateRoute>
           }
         />
         <Route
           path="/myassets/deposit"
           element={
-            <PrivateRoute isAuthenticated={isAuthenticated}>
+            // <PrivateRoute isAuthenticated={isAuthenticated}>
               <Layout2>
                 <Deposit />
               </Layout2>
-            </PrivateRoute>
+            // </PrivateRoute>
           }
         />
         <Route
           path="/dashboard"
           element={
-            <PrivateRoute isAuthenticated={isAuthenticated}>
+            // <PrivateRoute isAuthenticated={isAuthenticated}>
               <Layout2>
                 <Dashboard />
               </Layout2>
-            </PrivateRoute>
+            // </PrivateRoute>
           }
         />
         <Route
           path="/invites"
           element={
-            <PrivateRoute isAuthenticated={isAuthenticated}>
+            // <PrivateRoute isAuthenticated={isAuthenticated}>
               <Layout2>
                 <Invites />
               </Layout2>
-            </PrivateRoute>
+            // </PrivateRoute>
           }
         />
         <Route path="/register" element={<Register />} />
         <Route
-          path="/"
+          path="/login"
           element={<Login setAuthenticated={setAuthenticated} />}
         />
         <Route path="*" element={<Navigate to="/" replace />} />

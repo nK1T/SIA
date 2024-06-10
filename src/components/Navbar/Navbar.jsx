@@ -165,9 +165,9 @@ const Navbar = () => {
     }
   };
   const maskEmail = (email) => {
-    const atIndex = email.indexOf("@");
-    const maskedPart = email.substring(0, Math.min(3, atIndex)) + "****";
-    const domainPart = email.substring(atIndex);
+    const atIndex = email?.indexOf("@");
+    const maskedPart = email?.substring(0, Math.min(3, atIndex)) + "****";
+    const domainPart = email?.substring(atIndex);
     return maskedPart + domainPart;
   };
   return (
